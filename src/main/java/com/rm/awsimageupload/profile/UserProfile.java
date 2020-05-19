@@ -1,10 +1,11 @@
 package com.rm.awsimageupload.profile;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 public class UserProfile {
-    
+
     private UUID userProfileId;
     private String username;
     private String userProfileImageLink;
@@ -12,8 +13,7 @@ public class UserProfile {
 
     public UserProfile() {
     }
-    
-}
+
     public UserProfile(UUID userProfileId, String username, String userProfileImageLink) {
         this.userProfileId = userProfileId;
         this.username = username;
@@ -36,8 +36,8 @@ public class UserProfile {
         this.username = username;
     }
 
-    public String getUserProfileImageLink() {
-        return this.userProfileImageLink;
+    public Optional<String> getUserProfileImageLink() {
+        return Optional.ofNullable(userProfileImageLink);
     }
 
     public void setUserProfileImageLink(String userProfileImageLink) {
@@ -63,8 +63,9 @@ public class UserProfile {
     @Override
     public String toString() {
         return "{" +
-            " userProfileId='" + getUserProfileId() + "'" +
-            ", username='" + getUsername() + "'" +
-            ", userProfileImageLink='" + getUserProfileImageLink() + "'" +
-            "}";
+                " userProfileId='" + getUserProfileId() + "'" +
+                ", username='" + getUsername() + "'" +
+                ", userProfileImageLink='" + getUserProfileImageLink() + "'" +
+                "}";
     }
+}
