@@ -27,6 +27,6 @@ public class AmazonConfig {
             AWS_SECRET_ACCESS_KEY
         );
 
-        return AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.SA_EAST_1).build();
+        return AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_WEST_2).build();
     }
 }
